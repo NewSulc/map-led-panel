@@ -17,7 +17,7 @@ const router = createRouter({
       component: StandartView
     },
     {
-      path: '/',
+      path: '/fullcolor',
       name: 'Full color',
       component: FullColorView
     }

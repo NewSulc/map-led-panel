@@ -2,8 +2,8 @@
     <div class="main">
         <h1>Map - Led panel application</h1>
         <div class="container">
-            <div class="button">black and white</div>
-            <div class="button">Full color</div>
+            <RouterLink to="/standart" class="button">black and white</RouterLink>
+            <RouterLink to="/fullcolor" class="button">Full color</RouterLink>
         </div>
     </div>
 </template>
@@ -49,7 +49,8 @@ h1{
     font-weight: 700;
     border-radius: 1rem;
     transition: 0.1s;
-    user-select: none
+    user-select: none;
+    text-decoration: none;
 }
 
 .button:active{
