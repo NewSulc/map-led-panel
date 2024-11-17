@@ -11,6 +11,6 @@
 main{
   width: 100%;
   height: 100vh;
-  background-color: #3d3d3d;
+  background-color: #333333;
 }
 </style>
