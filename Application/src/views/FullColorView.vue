@@ -31,7 +31,6 @@ const xSize = 16, ySize = 8
 .column {
   width: 100%;
   height: 100%;
-  background-color: green;
   display: flex;
   flex-direction: column;
   justify-content: center;
