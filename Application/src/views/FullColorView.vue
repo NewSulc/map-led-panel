@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-const xSize = 16, ySize = 8
+const xSize = 32, ySize = 16
 </script>
 
 <style scoped>
