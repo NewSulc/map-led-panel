@@ -2,8 +2,8 @@
     <div class="main">
         <h1>Map - Led panel application</h1>
         <div class="container">
-            <RouterLink to="/standart" class="button">black and white</RouterLink>
-            <RouterLink to="/fullcolor" class="button">Full color</RouterLink>
+            <RouterLink to="/canvas" class="button">canvas</RouterLink>
+            <RouterLink to="/text" class="button">text</RouterLink>
         </div>
     </div>
 </template>

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
-import StandartView from '@/views/StandartView.vue'
-import FullColorView from '@/views/FullColorView.vue'
+import CanvasView from '@/views/CanvasView.vue'
+import TextView from '@/views/TextView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,14 +12,14 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/standart',
-      name: 'Standart',
-      component: StandartView
+      path: '/canvas',
+      name: 'Canvas',
+      component: CanvasView
     },
     {
-      path: '/fullcolor',
-      name: 'Full color',
-      component: FullColorView
+      path: '/text',
+      name: 'text',
+      component: TextView
     }
   ],
 })

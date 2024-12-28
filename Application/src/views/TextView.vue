@@ -2,8 +2,8 @@
     <div v-if="xSize <= ySize" class="main">
         <div class="led-grid-h">
             <div class="column-h" v-for="y in ySize">
-                <div class="led-h" v-for="x in xSize" @click="changeLed(x-1, y-1)">
-                    <LED :x="x" :y="y" :color="colors[ledArr[y-1][x-1].colorIndex]" />
+                <div class="led-h" v-for="x in xSize">
+                    <LED :x="x" :y="y" :color="colors[ledArr[y - 1][x - 1].colorIndex]" />
                 </div>
             </div>
         </div>
@@ -12,8 +12,8 @@
     <div v-else class="main">
         <div class="led-grid-w">
             <div class="column-w" v-for="y in xSize">
-                <div class="led-w" v-for="x in ySize" @click="changeLed(y-1, x-1)">
-                    <LED :x="y" :y="x" :color="colors[ledArr[x-1][y-1].colorIndex]" />
+                <div class="led-w" v-for="x in ySize">
+                    <LED :x="y" :y="x" :color="colors[ledArr[x - 1][y - 1].colorIndex]" />
                 </div>
             </div>
         </div>
@@ -39,11 +39,64 @@ onBeforeMount(() => {
             });
         }
     }
+
+    addText();
 })
 
-function changeLed(x, y){
-    if(ledArr.value[y][x].colorIndex < colors.length-1) ledArr.value[y][x].colorIndex++;
-    else ledArr.value[y][x].colorIndex = 0;
+const alphabet = {
+    a: {
+        sizeX: 4,
+        sizeY: 5,
+        shape: [
+            [0, 1, 1, 0],
+            [1, 0, 0, 1],
+            [1, 0, 0, 1],
+            [1, 1, 1, 1],
+            [1, 0, 0, 1]
+        ]
+    },
+    b: {
+        sizeX: 4,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1, 0],
+            [1, 0, 0, 1],
+            [1, 1, 1, 1],
+            [1, 0, 0, 1],
+            [1, 1, 1, 0]
+        ]
+    },
+    c: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [0, 1, 1],
+            [1, 0, 0],
+            [1, 0, 0],
+            [1, 0, 0],
+            [0, 1, 1],
+        ]
+    },
+}
+
+function addText() {
+    const val = "aa".toLowerCase().split("");
+    let moveRight = 0, moveDown = 0;
+    for (const v of val) {
+        const shape = alphabet[v].shape;
+
+        if ((moveRight + alphabet[v].sizeX + 1) > xSize) {
+            moveRight = 0;
+            moveDown = moveDown + 6;
+        }
+
+        for (const y in shape) {
+            for (const x in shape[y]) {
+                ledArr.value[Number(y) + moveDown][Number(x) + moveRight].colorIndex = shape[y][x];
+            }
+        }
+        moveRight = moveRight + alphabet[v].sizeX + 1;
+    }
 }
 </script>
 
