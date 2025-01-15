@@ -23,7 +23,7 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue';
 import LED from '@/components/LED.vue';
-const xSize = 16, ySize = 32;
+const xSize = 10, ySize = 25;
 const colors = ["#000000", "#ffffff"];
 
 const ledArr = ref([]);
@@ -40,7 +40,7 @@ onBeforeMount(() => {
         }
     }
 
-    addText();
+    addText("neco");
 })
 
 const alphabet = {
@@ -77,15 +77,370 @@ const alphabet = {
             [0, 1, 1],
         ]
     },
+    d: {
+        sizeX: 4,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1, 0],
+            [1, 0, 0, 1],
+            [1, 0, 0, 1],
+            [1, 0, 0, 1],
+            [1, 1, 1, 0]
+        ]
+    },
+    e: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [1, 0, 0],
+            [1, 1, 1],
+            [1, 0, 0],
+            [1, 1, 1]
+        ]
+    },
+    f: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [1, 0, 0],
+            [1, 1, 1],
+            [1, 0, 0],
+            [1, 0, 0]
+        ]
+    },
+    g: {
+        sizeX: 4,
+        sizeY: 5,
+        shape: [
+            [0, 1, 1, 0],
+            [1, 0, 0, 0],
+            [1, 0, 1, 1],
+            [1, 0, 0, 1],
+            [0, 1, 1, 0]
+        ]
+    },
+    h: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 0, 1],
+            [1, 0, 1],
+            [1, 1, 1],
+            [1, 0, 1],
+            [1, 0, 1]
+        ]
+    },
+    i: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [0, 1, 0],
+            [0, 1, 0],
+            [0, 1, 0],
+            [1, 1, 1]
+        ]
+    },
+    j: {
+        sizeX: 4,
+        sizeY: 5,
+        shape: [
+            [0, 1, 1, 1],
+            [0, 0, 0, 1],
+            [0, 0, 0, 1],
+            [1, 0, 0, 1],
+            [0, 1, 1, 0]
+        ]
+    },
+    k: {
+        sizeX: 4,
+        sizeY: 5,
+        shape: [
+            [1, 0, 0, 1],
+            [1, 0, 1, 0],
+            [1, 1, 0, 0],
+            [1, 0, 1, 0],
+            [1, 0, 0, 1]
+        ]
+    },
+    l: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 0, 0],
+            [1, 0, 0],
+            [1, 0, 0],
+            [1, 0, 0],
+            [1, 1, 1]
+        ]
+    },
+    m: {
+        sizeX: 5,
+        sizeY: 5,
+        shape: [
+            [1, 0, 0, 0, 1],
+            [1, 1, 0, 1, 1],
+            [1, 0, 1, 0, 1],
+            [1, 0, 0, 0, 1],
+            [1, 0, 0, 0, 1]
+        ]
+    },
+    n: {
+        sizeX: 4,
+        sizeY: 5,
+        shape: [
+            [1, 0, 0, 1],
+            [1, 1, 0, 1],
+            [1, 0, 1, 1],
+            [1, 0, 0, 1],
+            [1, 0, 0, 1]
+        ]
+    },
+    o: {
+        sizeX: 4,
+        sizeY: 5,
+        shape: [
+            [0, 1, 1, 0],
+            [1, 0, 0, 1],
+            [1, 0, 0, 1],
+            [1, 0, 0, 1],
+            [0, 1, 1, 0]
+        ]
+    },
+    p: {
+        sizeX: 4,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1, 0],
+            [1, 0, 0, 1],
+            [1, 1, 1, 0],
+            [1, 0, 0, 0],
+            [1, 0, 0, 0]
+        ]
+    },
+    q: {
+        sizeX: 4,
+        sizeY: 5,
+        shape: [
+            [0, 1, 1, 0],
+            [1, 0, 0, 1],
+            [1, 0, 0, 1],
+            [1, 0, 1, 1],
+            [0, 1, 1, 1]
+        ]
+    },
+    r: {
+        sizeX: 4,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1, 0],
+            [1, 0, 0, 1],
+            [1, 1, 1, 0],
+            [1, 0, 0, 1],
+            [1, 0, 0, 1]
+        ]
+    },
+    s: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [0, 1, 1],
+            [1, 0, 0],
+            [0, 1, 0],
+            [0, 0, 1],
+            [1, 1, 0]
+        ]
+    },
+    t: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [0, 1, 0],
+            [0, 1, 0],
+            [0, 1, 0],
+            [0, 1, 0]
+        ]
+    },
+    u: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 0, 1],
+            [1, 0, 1],
+            [1, 0, 1],
+            [1, 0, 1],
+            [1, 1, 1]
+        ]
+    },
+    v: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 0, 1],
+            [1, 0, 1],
+            [1, 0, 1],
+            [1, 0, 1],
+            [0, 1, 0]
+        ]
+    },
+    x: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 0, 1],
+            [1, 0, 1],
+            [0, 1, 0],
+            [1, 0, 1],
+            [1, 0, 1]
+        ]
+    },
+    y: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 0, 1],
+            [1, 0, 1],
+            [1, 0, 1],
+            [0, 1, 0],
+            [0, 1, 0]
+        ]
+    },
+    z: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [0, 0, 1],
+            [0, 1, 0],
+            [1, 0, 0],
+            [1, 1, 1]
+        ]
+    },
+    1: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [0, 1, 0],
+            [1, 1, 0],
+            [0, 1, 0],
+            [0, 1, 0],
+            [1, 1, 1]
+        ]
+    },
+    2: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [1, 0, 1],
+            [0, 1, 0],
+            [1, 0, 0],
+            [1, 1, 1]
+        ]
+    },
+    3: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [0, 0, 1],
+            [1, 1, 1],
+            [0, 0, 1],
+            [1, 1, 1]
+        ]
+    },
+    4: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [0, 1, 0],
+            [1, 0, 0],
+            [1, 1, 1],
+            [0, 1, 0],
+            [0, 1, 0]
+        ]
+    },
+    5: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [1, 0, 0],
+            [1, 1, 1],
+            [0, 0, 1],
+            [1, 1, 1]
+        ]
+    },
+    6: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [1, 0, 0],
+            [1, 1, 1],
+            [1, 0, 1],
+            [1, 1, 1]
+        ]
+    },
+    7: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [0, 0, 1],
+            [0, 1, 0],
+            [0, 1, 0],
+            [0, 1, 0]
+        ]
+    },
+    8: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [1, 0, 1],
+            [1, 1, 1],
+            [1, 0, 1],
+            [1, 1, 1]
+        ]
+    },
+    9: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [1, 0, 1],
+            [1, 1, 1],
+            [0, 0, 1],
+            [0, 0, 1]
+        ]
+    },
+    0: {
+        sizeX: 3,
+        sizeY: 5,
+        shape: [
+            [1, 1, 1],
+            [1, 0, 1],
+            [1, 0, 1],
+            [1, 0, 1],
+            [1, 1, 1]
+        ]
+    },
 }
 
-function addText() {
-    const val = "aa".toLowerCase().split("");
+function addText(input) {
+    const val = input.toLowerCase().split("");
     let moveRight = 0, moveDown = 0;
+
+    //moveRight = horizontalCenter(val, xSize);
+
     for (const v of val) {
         const shape = alphabet[v].shape;
 
-        if ((moveRight + alphabet[v].sizeX + 1) > xSize) {
+        if ((moveRight + alphabet[v].sizeX) > xSize) {
             moveRight = 0;
             moveDown = moveDown + 6;
         }
@@ -97,6 +452,18 @@ function addText() {
         }
         moveRight = moveRight + alphabet[v].sizeX + 1;
     }
+}
+
+function horizontalCenter(val, panelWidth){
+    let textWidth = 0;
+
+    for(const v of val){
+        textWidth += alphabet[v].sizeX + 1;
+    }
+    textWidth -= 1;
+
+    panelWidth = panelWidth-textWidth;
+    return Math.floor(panelWidth/2);
 }
 </script>
 
